@@ -54,7 +54,7 @@ public class frmClima extends javax.swing.JFrame {
             }
         });
 
-        cboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parral", "Chihuahua", "Ciudad Juarez", "Cuauhtemoc", "Delicias", " " }));
+        cboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hidalgo del Parral", "Chihuahua", "Ciudad Juarez", "Cuauhtemoc", "Delicias", " " }));
         cboCiudades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboCiudadesActionPerformed(evt);
@@ -141,7 +141,7 @@ public class frmClima extends javax.swing.JFrame {
                     break;
 
                 case "Chihuahua":
-                    int c = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    int c = s.getForecast("115958", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String t = "";
                     t = String.valueOf(c);
                     lblTemp.setText(s.getForecast("115958", DegreeUnit.CELSIUS)
@@ -150,7 +150,7 @@ public class frmClima extends javax.swing.JFrame {
                     break;
 
                 case "Ciudad Juarez":
-                    int cj= s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    int cj= s.getForecast("116556", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String j = "";
                     j = String.valueOf(cj);
                     lblTemp.setText(s.getForecast("116556", DegreeUnit.CELSIUS)
@@ -159,7 +159,7 @@ public class frmClima extends javax.swing.JFrame {
                     break;
 
                 case "Cuauhtemoc":
-                    int ca = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    int ca = s.getForecast("145122", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String tempe = "";
                     tempe = String.valueOf(ca);
                     lblTemp.setText(s.getForecast("145122", DegreeUnit.CELSIUS)
@@ -167,7 +167,7 @@ public class frmClima extends javax.swing.JFrame {
                     lblClima.setText(tempe);
                     break;
                 case "Delicicas":
-                    int d = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    int d = s.getForecast("118131", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String g = "";
                     g = String.valueOf(d);
                     lblTemp.setText(s.getForecast("118131", DegreeUnit.CELSIUS)
