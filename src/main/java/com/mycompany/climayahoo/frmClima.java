@@ -44,7 +44,7 @@ public class frmClima extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parral", "Chihuahua", "Ciudad Juarez", "Cuauhtemoc", "Delicias", "" }));
+        cboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parral", "Chihuahua", "Ciudad Juarez", "Cuauhtemoc", "Delicias" }));
         cboCiudades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboCiudadesActionPerformed(evt);
@@ -126,7 +126,7 @@ public class frmClima extends javax.swing.JFrame {
                             .getItem().getCondition().getText());
                     lblTemp.setText(tempe+"°");
                     break;
-                case "Delicicas":
+                case "Delicias":
                     int d = s.getForecast("118131", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String g = "";
                     g = String.valueOf(d);
