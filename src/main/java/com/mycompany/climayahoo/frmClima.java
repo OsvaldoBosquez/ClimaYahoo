@@ -128,38 +128,51 @@ public class frmClima extends javax.swing.JFrame {
 
     private void cboCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCiudadesActionPerformed
         try {
-            int x = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
-            String temp = "";
-            temp = String.valueOf(x);
+
             switch (cboCiudades.getSelectedItem().toString()) {
 
                 case "Hidlago del Parral":
+                    int p = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    String temp = "";
+                    temp = String.valueOf(p);
                     lblTemp.setText(s.getForecast("24552534", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
                     lblClima.setText(temp);
                     break;
 
                 case "Chihuahua":
+                    int c = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    String t = "";
+                    t = String.valueOf(c);
                     lblTemp.setText(s.getForecast("115958", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(temp);
+                    lblClima.setText(t);
                     break;
 
                 case "Ciudad Juarez":
+                    int cj= s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    String j = "";
+                    j = String.valueOf(cj);
                     lblTemp.setText(s.getForecast("116556", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(temp);
+                    lblClima.setText(j);
                     break;
 
                 case "Cuauhtemoc":
+                    int ca = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    String tempe = "";
+                    tempe = String.valueOf(ca);
                     lblTemp.setText(s.getForecast("145122", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(temp);
+                    lblClima.setText(tempe);
                     break;
                 case "Delicicas":
+                    int d = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                    String g = "";
+                    g = String.valueOf(d);
                     lblTemp.setText(s.getForecast("118131", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(temp);
+                    lblClima.setText(g);
                     break;
 
             }
