@@ -22,6 +22,9 @@ import com.github.fedy2.weather.data.unit.DegreeUnit;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.xml.bind.JAXBException;
 
 /**
@@ -35,8 +38,10 @@ public class frmClima extends javax.swing.JFrame {
     /**
      * Creates new form frmClima
      */
-    public frmClima() throws JAXBException {
+    public frmClima() throws JAXBException, UnsupportedLookAndFeelException {
         initComponents();
+                UIManager.setLookAndFeel(new com.jtattoo.plaf.noire.NoireLookAndFeel());
+                SwingUtilities.updateComponentTreeUI(this);
 
     }
 
@@ -191,6 +196,8 @@ public class frmClima extends javax.swing.JFrame {
                 try {
                     new frmClima().setVisible(true);
                 } catch (JAXBException ex) {
+                    Logger.getLogger(frmClima.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
                     Logger.getLogger(frmClima.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
