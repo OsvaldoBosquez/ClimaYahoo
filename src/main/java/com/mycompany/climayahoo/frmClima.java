@@ -37,9 +37,6 @@ public class frmClima extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        txtTemp = new javax.swing.JTextField();
-        txtClima = new javax.swing.JTextField();
         cboCiudades = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         lblTemp = new javax.swing.JLabel();
@@ -47,14 +44,7 @@ public class frmClima extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        cboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hidalgo del Parral", "Chihuahua", "Ciudad Juarez", "Cuauhtemoc", "Delicias", " " }));
+        cboCiudades.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Parral", "Chihuahua", "Ciudad Juarez", "Cuauhtemoc", "Delicias", "" }));
         cboCiudades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboCiudadesActionPerformed(evt);
@@ -67,26 +57,17 @@ public class frmClima extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(0, 30, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cboCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtClima, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(lblClima, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cboCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(110, 110, 110))
+                        .addComponent(lblTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(lblClima, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(39, 39, 39))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,84 +76,63 @@ public class frmClima extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboCiudades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(36, 36, 36)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblClima, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                    .addComponent(lblTemp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(38, 38, 38)
-                .addComponent(txtClima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(jButton1)
+                    .addComponent(lblTemp, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(lblClima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            int x = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
-            String temp = "";
-            temp = String.valueOf(x);
-            lblTemp.setText(s.getForecast("24552534", DegreeUnit.CELSIUS)
-                    .getItem().getCondition().getText());
-            lblClima.setText(temp);
-        } catch (JAXBException ex) {
-            Logger.getLogger(frmClima.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(frmClima.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void cboCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCiudadesActionPerformed
         try {
 
             switch (cboCiudades.getSelectedItem().toString()) {
 
-                case "Hidlago del Parral":
-                    int p = s.getForecast("24552534", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
+                case "Parral":
+                    int p = s.getForecast("124834", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String temp = "";
                     temp = String.valueOf(p);
-                    lblTemp.setText(s.getForecast("24552534", DegreeUnit.CELSIUS)
+                    lblClima.setText(s.getForecast("124834", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(temp);
+                    lblTemp.setText(temp+"°");
                     break;
 
                 case "Chihuahua":
                     int c = s.getForecast("115958", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String t = "";
                     t = String.valueOf(c);
-                    lblTemp.setText(s.getForecast("115958", DegreeUnit.CELSIUS)
+                    lblClima.setText(s.getForecast("115958", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(t);
+                    lblTemp.setText(t+"°");
                     break;
 
                 case "Ciudad Juarez":
                     int cj= s.getForecast("116556", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String j = "";
                     j = String.valueOf(cj);
-                    lblTemp.setText(s.getForecast("116556", DegreeUnit.CELSIUS)
+                    lblClima.setText(s.getForecast("116556", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(j);
+                    lblTemp.setText(j+"°");
                     break;
 
                 case "Cuauhtemoc":
                     int ca = s.getForecast("145122", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String tempe = "";
                     tempe = String.valueOf(ca);
-                    lblTemp.setText(s.getForecast("145122", DegreeUnit.CELSIUS)
+                    lblClima.setText(s.getForecast("145122", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(tempe);
+                    lblTemp.setText(tempe+"°");
                     break;
                 case "Delicicas":
                     int d = s.getForecast("118131", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String g = "";
                     g = String.valueOf(d);
-                    lblTemp.setText(s.getForecast("118131", DegreeUnit.CELSIUS)
+                    lblClima.setText(s.getForecast("118131", DegreeUnit.CELSIUS)
                             .getItem().getCondition().getText());
-                    lblClima.setText(g);
+                    lblTemp.setText(g+"°");
                     break;
 
             }
@@ -225,11 +185,8 @@ public class frmClima extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cboCiudades;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblClima;
     private javax.swing.JLabel lblTemp;
-    private javax.swing.JTextField txtClima;
-    private javax.swing.JTextField txtTemp;
     // End of variables declaration//GEN-END:variables
 }
