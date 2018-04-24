@@ -1,7 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Osvaldo Bosquez Garcia  16410108
+ * Fecha: 24/04/2018
+ * Tiempo de desarrollo: 5 hrs aprox.
+ * Contratiempos: En especifico tuve dos, el primero fue que antes de descargar esta api 
+ * estaba utilizando otra distinta que no me permitia obtener el estado del tiempo (nublado, claro,etc)
+ * despues descargue la que se utiliza en este proyecto pero no encontraba mucha documentacion en internet asi
+ * que tuve que probar la mayoria de los metodos antes de dar con los que necesitaba
+ * Conclusion: 
+ * Con este proyecto pude darme cuenta de la gran variedad de apis que existen para crear este tipo 
+ * de aplicacion si es que podriamos llamarlo asi, y tambien de la importancia de generar
+ * la documentaion necesaria en cada codigo, debido a que esto facilitara mucho la reutilizacion
+ * de nuestro codigo.
+ * Referencias:
+ * http://woeid.rosselliot.co.nz/lookup
+ * https://github.com/fedy2/yahoo-weather-java-api
  */
 package com.mycompany.climayahoo;
 
@@ -92,6 +104,8 @@ public class frmClima extends javax.swing.JFrame {
             switch (cboCiudades.getSelectedItem().toString()) {
 
                 case "Parral":
+        //Para la localizacion de cada ciudad hay que ingresar su codigo WOEID para que Yahoo pueda encontrar
+        //la ciudad que deseamos
                     int p = s.getForecast("124834", DegreeUnit.CELSIUS).getItem().getCondition().getTemp();
                     String temp = "";
                     temp = String.valueOf(p);
